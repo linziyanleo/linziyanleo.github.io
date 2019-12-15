@@ -73,7 +73,7 @@ function draw () {
 	textAlign(CENTER);
 	text("Here is Leo Lin, or Ziyan Lin officially", width/2, height*0.45);
 	text("I am a senior student at UCSB", width/2, height*0.48);
-	text("Studying Computer Science and Media Art", width/2, height*0.51);
+	text("Major in Computer Science and Media Art", width/2, height*0.51);
 	text("Touch these bubbles to see more about me and my works", width/2, height*0.54);
 
 	for(var i = 0; i < t.length; i++){ 
