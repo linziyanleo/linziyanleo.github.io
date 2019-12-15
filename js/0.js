@@ -72,7 +72,7 @@ function draw () {
 	text("Here is Leo Lin, or Ziyan Lin officially", width/2, height*0.45);
 	text("I am a senior student in UCSB", width/2, height*0.48);
 	text("Studying Computer Science and Media Art", width/2, height*0.51);
-	text("And also want to learn more about life", width/2, height*0.54);
+	text("Touch these bubbles to see more about me and my works", width/2, height*0.54);
 
 	for(var i = 0; i < t.length; i++){ 
 		circles[i].show();
@@ -86,5 +86,7 @@ function windowResized(){
 }
 
 function mousePressed() {
-	location.replace("index.html")
+	if(mouseY < windowHeight/2){
+		location.replace("index.html")
+	}
 }

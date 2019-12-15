@@ -7,6 +7,8 @@ Runner = Matter.Runner,
 MouseConstraint = Matter.MouseConstraint,
 Mouse = Matter.Mouse,
 Constraint = Matter.Constraint;
+var fillColor = '#6087ce'
+var CircleType = 1
 
 // create an engine
 var engine,world;
@@ -33,7 +35,7 @@ function setup () {
 	for(var i = 0 ; i < t.length; i++){
 		var radius = map(r[i],0,10,20,70);
 		var n = map(windowWidth,400,2000,1,2.5);
-		circles.push(new Circle(random(width),random(-200,-2000), radius*n,t[i]));
+		circles.push(new Circle(random(width),random(-200,-2000), radius*n,t[i], CircleType));
 	}
 
 
@@ -59,7 +61,7 @@ function draw () {
 	noStroke();
 	rect(0,0,width,height);
 
-	fill('#6087ce');
+	fill(fillColor);
 	noStroke();
 	var size = map(windowWidth,375,2000,14,22);
 	textSize(size);
@@ -72,7 +74,7 @@ function draw () {
 	text("Here is Leo Lin, or Ziyan Lin officially", width/2, height*0.45);
 	text("I am a senior student in UCSB", width/2, height*0.48);
 	text("Studying Computer Science and Media Art", width/2, height*0.51);
-	text("And also want to learn more about life", width/2, height*0.54);
+	text("Touch these bubbles to see more about me and my works", width/2, height*0.54);
 
 	for(var i = 0; i < t.length; i++){ 
 		circles[i].show();
@@ -86,5 +88,7 @@ function windowResized(){
 }
 
 function mousePressed() {
-	location.replace("index0.html")
+	if(mouseY < windowHeight/2){
+		location.replace("index0.html")
+	}
 }
