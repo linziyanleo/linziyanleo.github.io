@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title> e y e H e r e </title>
+    <link rel="icon" href="image/vector.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+    #mymap {
+        height: 100%;
+        z-index: 1;
+    }
+	#mydata{
+		position: absolute;
+		bottom:30px;
+		left:20px;
+		z-index: 2;
+		font-size: 25px;
+		font-family: helvetica;
+		color: rgb(255,255,255);
+	}
+	#square{
+	    width: 100%;
+	    height: 50px;
+	    background: white;
+	    font-family: 'Stylish', sans-serif;
+	    font-size:20px;
+	    text-align:center;
+		line-height: 50px;
+		box-shadow:3px 7px 10px gray inset;
+	}
+	.dropdown {
+	  position: relative;
+	  display: inline-block;
+	}
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  padding: 12px 16px;
+	  width:100%;
+	  z-index: 2;
+	}
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+
+	a:link {color:black;}    /* 未被访问的链接 */
+	a:visited {color:grey;} /* 已被访问的链接 */
+	a:hover {color:grey;}   /* 鼠标指针移动到链接上 */
+	a:active {color:black;}  /* 正在被点击的链接 */
+	
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+     <script>
+     
+var map
+var marker
+var init = 0
+var Lat
+var Long
+
+
+function initMap() {
+	map = new google.maps.Map(document.getElementById('mymap'), {
+	center: {lat: 0, lng: 0},
+	zoom: 18,
+	disableDefaultUI: true,
+	zoomControl: false,
+	gestureHandling: 'none'
+	});
+	
+	var gpsoptions = {
+	enableHighAccuracy: true,
+	timeout: 30000,
+	maximumAge: 0
+	};
+   	navigator.geolocation.watchPosition(watch_position,error,gpsoptions)
+   	
+   	marker = new google.maps.Marker({
+	  position: {lat: 0, lng: 0},
+	  map: map
+	});
+}
+	// var image = 'https://media3.giphy.com/media/3ohs4CacylzFaHjMM8/giphy.gif?cid=790b76115cd90c564e78456b63bc1e12&rid=giphy.gif'
+	// var marker1 = new google.maps.Marker({
+ //    position: location,
+ //    icon: image
+ //    map: map
+	// });
+
+	// var d = distance_to_location
+
+	// var outerCoords = [
+ //          {lat: position.coords.latitude+1, lng: position.coords.longitude-1},
+ //          {lat: position.coords.latitude+1, lng: position.coords.longitude+1},
+ //          {lat: position.coords.latitude-1, lng: position.coords.longitude+1},
+ //          {lat: position.coords.latitude-1, lng: position.coords.longitude-1}
+ //        ];
+ //    var innerCoords = [
+ //          {lat: position.coords.latitude+d/10000, lng: position.coords.longitude-d/10000},
+ //          {lat: position.coords.latitude+d/10000, lng: position.coords.longitude+d/10000},
+ //          {lat: position.coords.latitude-d/10000, lng: position.coords.longitude+d/10000},
+ //          {lat: position.coords.latitude-d/10000, lng: position.coords.longitude-d/10000}
+ //        ];
+
+	// var bermudaTriangle = new google.maps.Polygon({
+ //          paths: [outerCoords, innerCoords],
+ //          strokeColor: '#FFC107',
+ //          strokeOpacity: 0.8,
+ //          strokeWeight: 2,
+ //          fillColor: '#FFC107',
+ //          fillOpacity: 0.35,
+ //          z-index: 1
+ //        });
+ //        bermudaTriangle.setMap(map);
+
+function randomPos(lat,long){
+	if (init == 0){
+		var signLA = Math.random()
+		var signLO = Math.random()
+		if (signLA > 0.5){
+			Lat = lat + Math.random() * 0.0004
+		}else{
+			Lat = lat - Math.random() * 0.0004
+		}
+		if (signLO > 0.5){
+			Long = long + Math.random() * 0.0004
+		}else{
+			Long = long - Math.random() * 0.0004
+		}
+		console.log(init)
+		init = 1
+
+	}
+}
+
+
+function watch_position(position) {
+	var pos = {
+	lat: position.coords.latitude,
+	lng: position.coords.longitude
+	};
+
+	lat1 = position.coords.latitude;
+	lng1 = position.coords.longitude
+
+
+	
+	map.panTo(pos);
+	marker.setPosition(pos);
+
+	randomPos(lat1, lng1); 
+	//console.log(lat1,lng1);
+
+	// signLA = Math.random()
+	// signLO = Math.random()
+
+	// if (signLA > 0.5){
+	// 	Lat = position.coords.latitude + Math.random() * 0.0003
+	// }else{
+	// 	Lat = position.coords.latitude - Math.random() * 0.0003
+	// }
+	// if (signLO > 0.5){
+	// 	Long = position.coords.longitude + Math.random() * 0.0003
+	// }else{
+	// 	Long = position.coords.longitude - Math.random() * 0.0003
+	// }
+
+	var location = {lat:Lat, lng:Long}
+	console.log(Lat)
+	// addMarker(location, mymap)
+	
+	var distance_to_location = distance(Lat, Long, position.coords.latitude, position.coords.longitude, 'K')
+	var distance_to_location_meters=Math.floor(distance_to_location*1000)
+	var myd=document.getElementById('mydata')
+	var mapdiv=document.getElementById('mymap')
+	console.log(distance_to_location)
+	// var image = 'https://media3.giphy.com/media/3ohs4CacylzFaHjMM8/giphy.gif?cid=790b76115cd90c564e78456b63bc1e12&rid=giphy.gif'
+	// var marker = new google.maps.Marker({
+ //      position: {Lat, Long},
+ //      map: mymap,
+ //      icon: image
+ //    });
+	
+	myd.innerHTML=distance_to_location_meters
+	
+	if(distance_to_location_meters<100){
+		var map_opacity= 1.5 - distance_to_location_meters/100
+		mapdiv.style.opacity = map_opacity
+	}
+}
+
+function drawCircle(distance_to_location_meters) {
+    noStroke();
+    fill(255,255,255);
+    var radius = 100-distance_to_location;
+    ellipse(radius,radius,radius,radius);
+}
+
+function error(err) {
+  console.log(err.message)
+}
+ 
+//do not change. Function from https://www.geodatasource.com/developers/javascript calculating the distance between two points
+//:::   				unit options=
+//:::                  'M' is statute miles (default)                         :::
+//:::                  'K' is kilometers                                      :::
+//:::                  'N' is nautical miles  
+
+function distance(lat1, lon1, lat2, lon2, unit) {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}
+
+  </script>
+  </head>
+  <body  style="background-color:black;">
+  	<div id="square" class="dropdown">  e y e H e r e <img class="aligncenter" src="img/vector2.png" style="position:absolute;topleft:10px;">
+  		<div class="dropdown-content">
+		    <a href="about_eye.html">About this Eye.</a></br>
+		    <a href="home.html">About Me and Art 122CC.  </a>
+  		</div>
+	</div>
+  	
+
+    <div id="mymap"></div>
+    <div id="mydata">Distance</div>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxnUEoCtg-yVwcXtyr1Hx6KNfCi3HSfoU&callback=initMap"></script>
+  </body>
+</html>

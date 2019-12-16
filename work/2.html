@@ -15,24 +15,6 @@
   <script type="text/javascript" src="js/gif.js"></script>
   <script type="text/javascript" src="js/p5.dom.min.js"></script>
 
-  <style type="text/css">
-    *{
-      margin:0;
-      padding:0;
-    }
-
-    #introduction {
-      position:absolute;
-      right:75px;
-      bottom:200px;
-      height:200px;
-      width:300px;
-      text-align:center;
-      cursor:pointer;
-    }
-
-  </style>
-
 </head>
 
 <body>
@@ -57,49 +39,8 @@
     Length : 10,
     Nums : 100,
     Size : 150,
-    noiseScale: 800,
-    ColorMode : 'Linera Gradient',
-    Random: function () { 
-      var Color1 = getRandomColor(); 
-      color1Control.setValue(Color1);
-
-      var Color2 = getRandomColor(); 
-      color2Control.setValue(Color2);
-
-      var Color3 = getRandomColor(); 
-        color3Control.setValue(Color3);
-
-      setup();
-    },
+    noiseScale: 800
   }
-
-var text, gui, config, color1Control, color2Control, color3Control, RandomControl;
-  window.onload = function() {
-    // document.getElementById('defaultCanvas0').onmousedown = function(e) {
-    //     if(typeof e.preventDefault === 'function') {
-    //       e.preventDefault();
-    //       e.stopPropagation();
-    //     }else {
-    //       e.returnValue = false;
-    //       e.cancelBubble = true;
-    //     }
-    //   }
-    //   gui = new dat.GUI();
-
-  // var folder1 = gui.addFolder('Controls');
-  // color1Control = folder1.addColor(options, 'Color1');
-  // color1Control.onChange(draw);
-
-  // color2Control = folder1.addColor(options, 'Color2');
-  // color2Control.onChange(draw);
-
-  // color3Control = folder1.addColor(options, 'Color3');
-  // color3Control.onChange(draw);
-
-  // RandomControl = folder1.add(options, 'Random');
-
-  // folder1.open();
-};
 
 </script>
 

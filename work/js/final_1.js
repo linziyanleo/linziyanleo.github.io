@@ -8,18 +8,23 @@ var X;
 var Y;
 var Z;
 
+var imgNames = ['image/goose.gif', 'image/soda.png', 'image/me.jpg'];
+var imgs = [];
+var imgIndex = -1;
+
 function preload() {
-	   //img = loadImage('image/soda.png');
-	   img = loadImage('image/goose.gif');
+	for (let i = 0; i < imgNames.length; i++) {
+		imgs.push(loadImage(imgNames[i]));
+	}
 }
 
 function setup() {
 	canvas = createCanvas(windowWidth, windowHeight);
-	frame = 0;
-	clear();
+	changeImage();
 }
 
 function paint(pic, x0, y0, z0){   
+
 	pic.loadPixels();
 	if(pic.height > height-50 || pic.width > width-50){
 		var sca = height/pic.height;
@@ -76,11 +81,25 @@ function draw() {
 	Z = map(floor(rotationZ),0,359,0,1);
 	X = map(floor(rotationX),-180,180,0,1);
 	Y = map(floor(rotationY),-90,90,0,1);
-	if(type == "image"){
-		paint(uploadImg,X,Y,Z);
-	}else{
-		paint(img,X,Y,Z);
-	}
+
+	let img = imgs[imgIndex];
+	paint(img,X,Y,Z);
+
 	frame++;
 	frameRate(7);
+}
+
+function changeImage() {
+	background(255);
+	frame = 0;
+	noiseSeed(int(random(1000)));
+	imgIndex++;
+	if (imgIndex >= imgNames.length) {
+	  	imgIndex = 0;
+	}
+	imgs[imgIndex].loadPixels();
+}
+
+function mousePressed() {
+	changeImage();
 }

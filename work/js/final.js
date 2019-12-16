@@ -1,5 +1,6 @@
 var widths = [10, Math.random() * 25 + 10, Math.random() * 50 + 10, 60];
 
+
 function onPageLoaded() {
 	loadMonaLisa();
 	start();
@@ -205,3 +206,7 @@ function drawALine(canvas, cxt, widths) {
 	);
 	cxt.stroke();
 }
+
+function mousePressed() {
+	changeImage();
+  }

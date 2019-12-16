@@ -88,7 +88,7 @@ function windowResized(){
 }
 
 function mousePressed() {
-	if(mouseY < windowHeight/2){
-		location.replace("index0.html")
+	if(mouseY > windowHeight/2){
+		location.replace("./work/index.html")
 	}
 }
