@@ -85,7 +85,7 @@ function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function mousePressed() {
+function mouseReleased() {
 	if(mouseY > windowHeight/2){
 		location.replace("./work/index.html")
 	}
