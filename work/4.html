@@ -12,33 +12,40 @@
   <link href="" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/fonts.css">
   <script type="text/javascript" src="js/dat.gui.min.js"></script>
-  <script type="text/javascript" src="js/p5.sound.js"></script>
   <script type="text/javascript" src="js/p5.js"></script>
   <script type="text/javascript" src="js/gif.js"></script>
   <script type="text/javascript" src="js/p5.dom.min.js"></script>
 
 </head>
 <body ontouchmove="BlockMove(event);">
-  <script type="text/javascript">
+    <script type="text/javascript">
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+      return color;
+    }
 
-  var type;
-  var options ={  
-    Background :'#0A0A0A',
-    Color1 : '#3370ff',
-    Color2 : '#27ff6e',
-    Range: 15,
-    Speed : 30,
-    Counts : 700,
-    Size : 2
-  }
-  function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-  }
+    var type;
+    var options ={  
+      Background :'#0A0A0A',
+      Color1 : '#3370ff',
+      Color2 : '#27ff6e',
+      Range: 15,
+      Speed : 30,
+      Counts : 700,
+      Size : 2
+    }
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
 
-  function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-  }
+    function rgbToHex(r, g, b) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
 </script>
 <div width:200px; height:100px >
 <script type="text/javascript" src="js/4.js"></script>
