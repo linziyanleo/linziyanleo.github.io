@@ -158,3 +158,7 @@ function Star(){
 function mousePressed() {
 	location.replace("5.html")
 }
+
+function BlockMove(event) {
+	event.preventDefault() ;
+}

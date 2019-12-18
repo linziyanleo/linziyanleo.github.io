@@ -91,4 +91,6 @@ function touchStarted(){
 }
 
 
-
+function BlockMove(event) {
+	event.preventDefault() ;
+}

@@ -47,7 +47,7 @@ function drawLines(ang){
     for (i = -100; i < 100; i++){
         noStroke();
         fill(255,255,255);
-        rect(-1300,-i*25-200,1301,10);
+        rect(-10000,-i*25-200,10000,10);
     }
 }
 
@@ -73,4 +73,8 @@ function mousePressed(){
     x = mouseX;
     y = mouseY;
     on = !on;
+}
+
+function BlockMove(event) {
+	event.preventDefault() ;
 }

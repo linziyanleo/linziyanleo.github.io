@@ -100,6 +100,10 @@ function changeImage() {
 	imgs[imgIndex].loadPixels();
 }
 
-function mousePressed() {
+function mouseReleased() {
 	changeImage();
+}
+
+function BlockMove(event) {
+	event.preventDefault() ;
 }

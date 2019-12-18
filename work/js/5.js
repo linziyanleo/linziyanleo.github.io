@@ -173,3 +173,7 @@ function Star(){
         }
     }
 }
+
+function BlockMove(event) {
+	event.preventDefault() ;
+}
