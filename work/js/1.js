@@ -89,3 +89,6 @@ function touchStarted(){
         particles[i].life = random(0,maxLife);
     }
 }
+
+
+
