@@ -1,4 +1,4 @@
-var canvas;
+var myCanvas;
 var imgIndex = -1;
 var img;
 var frame;
@@ -19,7 +19,7 @@ function preload() {
 }
 
 function setup() {
-	canvas = createCanvas(windowWidth, windowHeight);
+	myCanvas = createCanvas(windowWidth, windowHeight);
 	changeImage();
 }
 
