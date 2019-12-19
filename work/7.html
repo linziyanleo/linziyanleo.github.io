@@ -6,7 +6,7 @@
   <title>Connecting World</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=0.6, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link href="" rel="stylesheet">
@@ -16,11 +16,31 @@
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/wind.css">
+
 
 </head>
 <body ontouchmove="BlockMove(event);">
 
 <script type="text/javascript" src="js/7.js"></script>
+
+<div id="area">
+  <div id="small_menu">
+      <ul>
+          <li line-height ： 100px>
+            <a>Touch to make connections. </a>
+          </li>
+      </ul>     
+  </div>  
+  <div id="on" onclick="xuanfu();">
+      <p>
+          <img src="image/logo/logo1_blue.ico" height = 35px;/>
+      </p>
+  </div> 
+</div>
+
+<script type="text/javascript" src="js/wind.js"></script>
+
 </body>
 
 </html>
