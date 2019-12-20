@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dandelion</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=0.6, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link href="" rel="stylesheet">
+  <script type="text/javascript" src="js/dat.gui.min.js"></script>
+  <script type="text/javascript" src="js/p5.js"></script>
+  <script type="text/javascript" src="js/p5.dom.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+
+<style type="text/css">
+    #area{
+    position:fixed;
+    width:400px;
+    right:0px;
+    top:1%;}
+#small_menu ul {
+    list-style: none;
+}
+#area #on{
+    position: absolute;
+    top: 40%;
+    right: 100%;
+    width: 10%;
+    height: 10%;
+    cursor: pointer;
+    background-color: rgba(235, 235, 235, 0);
+}
+#area #on p{
+    font-size:30px;
+    text-align:center;
+    margin-top:-6px;
+}
+#area #small_menu {
+    width:100%;
+} 
+#area #small_menu ul li {
+    margin-left:40px;
+    border-radius: 45px;
+    width:120%;
+    height: 100px;
+    text-align:left;
+    background-color: rgba(228, 228, 228, 0.8);
+    border-top: 1px solid rgb(221, 221, 221);
+    line-height: 100px;
+}
+#area #small_menu ul li a{
+    text-decoration: none; 
+    margin-left:20px;
+    color: #313131;
+    font-size:16px;
+    font-family: 'Microsoft Yahei';
+}
+</style>
+
+</head>
+<body ontouchmove="BlockMove(event);">
+<script type="text/javascript">
+    var type;
+    var options ={ 
+        Counts: 100,
+        Radius : 320,
+    }
+</script>
+
+<div id="area">
+
+  <div id="small_menu">
+      <ul>
+          <li>
+            <a>Hold up this fragile dandelion in your hand.</a>
+          </li>
+      </ul>     
+  </div>  
+  <div id="on" onclick="xuanfu();">
+      <p>
+          <img src="image/logo/logo1_blue.ico" height = 35px;/>
+      </p>
+  </div> 
+</div>
+
+<script type="text/javascript" src="js/wind.js"></script>
+
+<style type="text/css">
+    *{
+    margin:0;
+    padding:0;
+    }
+    #back {
+    width: 48px;
+    height: 46px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    display: block;
+    z-index: 60; 
+    }
+    #forward {
+    width: 48px;
+    height: 46px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    display: block;
+    z-index: 60; 
+    transform: rotateY(180deg);
+    }
+</style>
+<div>
+    <script type="text/javascript" src="js/6.js"></script>
+</div>
+
+<div id="back" onclick="location='timet.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="50" height="50"
+        viewBox="0 0 172 172"
+        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M86,6.88c-43.63156,0 -79.12,35.48844 -79.12,79.12c0,43.63156 35.48844,79.12 79.12,79.12c43.63156,0 79.12,-35.48844 79.12,-79.12c0,-43.63156 -35.48844,-79.12 -79.12,-79.12zM127.28,89.44h-74.25562l21.64781,21.64781c1.34375,1.34375 1.34375,3.52062 0,4.86437c-0.67187,0.67188 -1.54531,1.00781 -2.43219,1.00781c-0.88687,0 -1.76031,-0.33594 -2.43219,-1.00781l-27.52,-27.52c-0.3225,-0.3225 -0.56438,-0.69875 -0.73906,-1.11531c-0.34937,-0.84656 -0.34937,-1.78719 0,-2.63375c0.17469,-0.41656 0.41656,-0.79281 0.73906,-1.11531l27.52,-27.52c1.34375,-1.34375 3.52062,-1.34375 4.86437,0c1.34375,1.34375 1.34375,3.52062 0,4.86437l-21.64781,21.64781h74.25562c1.90813,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.53187,3.44 -3.44,3.44z"></path></g></g></svg>
+</div> 
+
+<div id="forward" onclick="location='connection.html'">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    width="50" height="50"
+    viewBox="0 0 172 172"
+    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M86,6.88c-43.63156,0 -79.12,35.48844 -79.12,79.12c0,43.63156 35.48844,79.12 79.12,79.12c43.63156,0 79.12,-35.48844 79.12,-79.12c0,-43.63156 -35.48844,-79.12 -79.12,-79.12zM127.28,89.44h-74.25562l21.64781,21.64781c1.34375,1.34375 1.34375,3.52062 0,4.86437c-0.67187,0.67188 -1.54531,1.00781 -2.43219,1.00781c-0.88687,0 -1.76031,-0.33594 -2.43219,-1.00781l-27.52,-27.52c-0.3225,-0.3225 -0.56438,-0.69875 -0.73906,-1.11531c-0.34937,-0.84656 -0.34937,-1.78719 0,-2.63375c0.17469,-0.41656 0.41656,-0.79281 0.73906,-1.11531l27.52,-27.52c1.34375,-1.34375 3.52062,-1.34375 4.86437,0c1.34375,1.34375 1.34375,3.52062 0,4.86437l-21.64781,21.64781h74.25562c1.90813,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.53187,3.44 -3.44,3.44z"></path></g></g></svg>
+</div> 
+
+</body>
+</html>

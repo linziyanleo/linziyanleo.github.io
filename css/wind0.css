@@ -1,4 +1,4 @@
- *{
+*{
     margin:0;
     padding:0;
 } 
@@ -17,7 +17,7 @@
     width: 10%;
     height: 10%;
     cursor: pointer;
-    background-color: rgba(235, 235, 235, 0);
+    background-color: rgba(63, 63, 63, 0);
 }
 #area #on p{
     font-size:30px;
@@ -29,18 +29,19 @@
 } 
 #area #small_menu ul li {
     margin-left:40px;
+
     border-radius: 45px;
     width:120%;
     height: 100px;
     text-align:left;
-    background-color: rgba(228, 228, 228, 0.8);
-    border-top: 1px solid rgb(221, 221, 221);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid #3F3F3F;
     line-height: 100px;
 }
 #area #small_menu ul li a{
     text-decoration: none; 
     margin-left:20px;
-    color: #313131;
+    color: #bfbfbf;
     font-size:16px;
     font-family: 'Microsoft Yahei';
 }
