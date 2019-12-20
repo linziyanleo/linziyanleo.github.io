@@ -1,4 +1,4 @@
-var menubox = document.getElementById("area"); 
+    var menubox = document.getElementById("area"); 
     var cli_on = document.getElementById("on"); 
     var flag = false, timer = null, initime = null, r_len = -400;
  

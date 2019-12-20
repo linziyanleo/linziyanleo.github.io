@@ -1,7 +1,7 @@
-*{
+ *{
     margin:0;
     padding:0;
-}
+} 
 #area{
     position:fixed;
     width:400px;
@@ -28,6 +28,8 @@
     width:100%;
 } 
 #area #small_menu ul li {
+    margin-left:40px;
+
     border-radius: 45px;
     width:120%;
     height: 100px;

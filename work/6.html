@@ -15,69 +15,66 @@
   <script type="text/javascript" src="js/p5.dom.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/fonts.css">
 
-
-  <style type="text/css">
-
-*{
+<style type="text/css">
+    /* *{
     margin:0;
     padding:0;
-}
-#area{
-    position:fixed;
-    width:400px;
-    right:0px;
-    top:1%;}
-#small_menu ul {
-    list-style: none;
-}
-#area #on{
-    position: absolute;
-    top: 40%;
-    right: 100%;
-    width: 10%;
-    height: 10%;
-    cursor: pointer;
-    background-color: rgba(63, 63, 63, 0);
-}
-#area #on p{
-    font-size:30px;
-    text-align:center;
-    margin-top:-6px;
-}
-#area #small_menu {
-    width:100%;
-} 
-#area #small_menu ul li {
-    border-radius: 45px;
-    width:120%;
-    height: 100px;
-    text-align:left;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 1px solid #3F3F3F;
-    line-height: 100px;
-}
-#area #small_menu ul li a{
-    margin-left:20px;
-    color: #bfbfbf;
-    font-size:16px;
-    font-family: 'Microsoft Yahei';
-}
-
+    } */
+    #area{
+        position:fixed;
+        width:400px;
+        right:0px;
+        top:1%;}
+    #small_menu ul {
+        list-style: none;
+    }
+    #area #on{
+        position: absolute;
+        top: 40%;
+        right: 100%;
+        width: 10%;
+        height: 10%;
+        cursor: pointer;
+        background-color: rgba(63, 63, 63, 0);
+    }
+    #area #on p{
+        font-size:30px;
+        text-align:center;
+        margin-top:-6px;
+    }
+    #area #small_menu {
+        width:100%;
+    } 
+    #area #small_menu ul li {
+        margin-left:40px;
+        border-radius: 45px;
+        width:120%;
+        height: 100px;
+        text-align:left;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-top: 1px solid #3F3F3F;
+        line-height: 100px;
+    }
+    #area #small_menu ul li a{
+        margin-left:20px;
+        color: #bfbfbf;
+        font-size:16px;
+        font-family: 'Microsoft Yahei';
+    }
 </style>
 
 </head>
 <body ontouchmove="BlockMove(event);">
 <script type="text/javascript">
- var type;
- var options ={ 
-  Counts: 100,
-  Radius : 320,
-}
+    var type;
+    var options ={ 
+        Counts: 100,
+        Radius : 320,
+    }
 </script>
 
-<script type="text/javascript" src="js/6.js"></script>
-
 <div id="area">
+
   <div id="small_menu">
       <ul>
           <li>
@@ -93,7 +90,16 @@
 </div>
 
 <script type="text/javascript" src="js/wind.js"></script>
+
+<style type="text/css">
+    *{
+    margin:0;
+    padding:0;
+    }
+</style>
+<div id = "js">
+    <script type="text/javascript" src="js/6.js"></script>
+</div>
+
 </body>
-
 </html>
-
