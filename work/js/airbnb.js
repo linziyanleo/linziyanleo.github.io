@@ -14,7 +14,7 @@ function preload(){
     tableCalendar = loadTable("data/Asheville/calendar.csv",'csv','header'); 
     tableReview = loadTable("data/Asheville/reviews.csv",'csv','header'); 
 
-    font = loadFont('../Sultan.otf');
+    //font = loadFont('../Sultan.otf');
 }
 
 function setup(){
@@ -33,7 +33,7 @@ function setup(){
     numCols2= tableReview.getColumnCount();  
 
     cam = createCamera();
-    textFont(font);
+    //textFont(font);
     textSize(windowWidth / 20);
     textAlign(CENTER, CENTER);
     
