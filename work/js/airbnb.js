@@ -34,8 +34,8 @@ function setup(){
 
     cam = createCamera();
     //textFont(font);
-    textSize(windowWidth / 20);
-    textAlign(CENTER, CENTER);
+    // textSize(windowWidth / 20);
+    // textAlign(CENTER, CENTER);
     
     for(var i = 0; i < numRows; i++){
         dataMatrix[i]= []; //create nested array
