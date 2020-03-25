@@ -3,16 +3,80 @@
     <title>Final Project - Airbnb data</title>
     <script src ="p5/p5.js"></script> 
     <script type="text/javascript" src="p5/dat.gui.min.js"></script>
+
     <!--link style sheet-->
     <link rel="stylesheet" href = "styleSheet.css">
-        <!--link javascript files-->
-        <script src = "js/airbnb.js"></script>
-        <!-- <script src = "drawData.js"></script> -->
+    <!--link javascript files-->
 </head>
 
 <body>
+    <script type="text/javascript">
+
+        var type;
+        var options ={  
+          Background :'#0A0A0A',
+          Color1 : '#1eb2a6',
+          Color2 : '#f67575',
+          Update: 'False',
+          Speed : 1,
+      
+          Random: function () { 
+            var Color1 = random(['#3370ff','#ff3389','#27ff6e','#27f7ff','#1eb2a6','#f67575']); 
+            color1Control.setValue(Color1);
+      
+            var Color2 = random(['#3370ff','#ff3389','#27ff6e','#27f7ff','#1eb2a6','#f67575']);  
+            color2Control.setValue(Color2);   
+      
+            var speed = random(0.25,10);
+            speedControl.setValue(speed);
+
+          },
+      
+        }
+      
+        var text, gui, config,BgControl, BgColor,color1Control,color2Control,speedControl,UpdateControl;
+        window.onload = function() {
+          gui = new dat.GUI();
+      
+        //folder1
+        var folder1 = gui.addFolder('Controls');
+      
+        BgControl = folder1.addColor(options, 'Background');
+        BgControl.onChange(draw);
+      
+        color1Control = folder1.addColor(options, 'Color1');
+        color1Control.onChange(draw);
+      
+        color2Control = folder1.addColor(options, 'Color2');
+        color2Control.onChange(draw);
+      
+        speedControl = folder1.add(options, 'Speed',0.25,10);
+        speedControl.onChange(setup);
+      
+        UpdateControl = folder1.add(options, 'Update',['True', 'False'] );
+        UpdateControl.onChange(setup);
+
+        var RandomControl = folder1.add(options, 'Random');
+      
+        folder1.open();
+      
+      };
+      
+      function componentToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+      }
+      
+      function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+      }
+
+      
+    </script>
 
 
+    <script src = "js/airbnb.js"></script>
+    
 </body>
 
 </html>
