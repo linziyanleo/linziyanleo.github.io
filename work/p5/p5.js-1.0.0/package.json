@@ -70,7 +70,7 @@
     "i18next-browser-languagedetector": "^4.0.1",
     "libtess": "^1.2.2",
     "lint-staged": "^4.3.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mocha": "^6.2.2",
     "omggif": "^1.0.10",
     "opentype.js": "^0.9.0",
